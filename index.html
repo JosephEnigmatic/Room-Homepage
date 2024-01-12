@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>FEM | Room Homepage</title>
+  </head>
+  <body>
+    <main class="homepage">
+      <section class="hero">
+        <ul class="mobile-nav">
+          <li><button class="close-btn">
+            <img src="images/icon-close.svg" alt="close icon">
+          </button></li>
+          <li>
+            <a href="#">home</a>
+          </li>
+          <li>
+            <a href="#">shop</a>
+          </li>
+          <li>
+            <a href="#">about</a>
+          </li>
+          <li>
+            <a href="#">contact</a>
+          </li>        
+        </ul>
+        <nav class="nav">
+          <button aria-label="Toggle menu" class="nav__toggle">
+          </button>
+
+          <a class="logo" href="/index.html">
+            <img src="images/logo.svg" alt="Brand Logo" />
+          </a>
+
+          <ul class="nav__items">
+            <li>
+              <a href="#">home</a>
+            </li>
+            <li>
+              <a href="#">shop</a>
+            </li>
+            <li>
+              <a href="#">about</a>
+            </li>
+            <li>
+              <a href="#">contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="hero__slider">
+          <picture class="hero__image">
+            <source
+              media="(max-width: 960px)"
+              srcset="images/mobile-image-hero-1.jpg"
+            />
+            <img src="images/desktop-image-hero-1.jpg" alt="A set of chairs" />
+          </picture>
+        </div>
+
+        <div class="slider-control">
+          <button id="slider-left-btn">
+            <img src="images/icon-angle-left.svg" alt="Slide left icon" />
+          </button>
+          <button id="slider-right-btn">
+            <img src="images/icon-angle-right.svg" alt="Slide right icon" />
+          </button>
+        </div>
+      </section>
+
+      <section class="intro">
+        <div class="intro__text">
+          <h1>Discover innovative ways to decorate</h1>
+          <p>
+            We provide unmatched quality, comfort, and style for property owners
+            across the country. Our experts combine form and function in
+            bringing your vision to life. Create a room in your own style with
+            our collection and make your property a reflection of you and what
+            you love.
+          </p>
+          <button>
+            Shop Now <img src="images/icon-arrow.svg" alt="Arrow icon" />
+          </button>
+        </div>
+      </section>
+
+      <div class="dark-seats">
+        <img
+          src="images/image-about-dark.jpg"
+          alt="A seat with a dark background"
+        />
+      </div>
+
+      <section class="about">
+        <div class="about__text">
+          <h2>About Our Furniture</h2>
+          <p>
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </p>
+        </div>
+      </section>
+
+      <div class="light-seats">
+        <img
+          src="images/image-about-light.jpg"
+          alt="A seat with a white background"
+        />
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+:root {
+  --dark-gray: hsl(0, 0%, 63%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --very-dark-gray: hsl(0, 0%, 27%);
+
+  --fs-normal: 0.85rem;
+
+  --fw-normal: 500;
+  --fw-bold: 600;
+  --fw-heavy: 700;
+
+  --font-family: "League Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+img, picture, source {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+a, a:active, a:visited, a:focus {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+p {
+  color: var(--dark-gray);
+}
+
+body {
+  line-height: 1.6;
+  font-size: var(--fs-normal);
+  font-family: var(--font-family);
+  min-height: 100vh;
+}
+
+.homepage {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.hero {
+  grid-column: span 4;
+  position: relative;
+}
+
+.hero__slider {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.hero__slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav__toggle {
+  display: none;
+}
+
+.nav__items {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav__items a {
+  color: var(--white);
+  font-weight: var(--fw-bold);
+  position: relative;
+}
+
+.nav__items a::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  height: 3px;
+  background-color: white;
+  width: 60%;
+  border-radius: 5px;
+  transform: scale(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out
+}
+
+.nav__items a:hover::before {
+  transform: scale(1);
+}
+
+.mobile-nav {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 120px;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  z-index: 40;
+  transform: translateY(-100%);
+  transition: all 500ms ease-in-out
+}
+
+.mobile-nav.open {
+  transform: translateY(0);
+}
+
+.mobile-nav a {
+  font-weight: var(--fw-bold);
+  color: var(--black);
+}
+
+.mobile-nav button {
+  height: 24px;
+  vertical-align: center;
+}
+
+.slider-control {
+  position: absolute;
+  background-color: var(--black);
+  bottom: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.slider-control button {
+  padding: 16px 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.slider-control button:hover {
+  background-color: var(--dark-gray);
+}
+
+.intro {
+  grid-column: span 3;
+}
+
+.slideInRight {
+  animation: SlideInRight 800ms ease-in forwards;
+}
+
+@keyframes SlideInRight {
+  0% {
+    opacity: 0.75;
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideInLeft {
+  animation: SlideInLeft 800ms ease-in forwards;
+}
+
+@keyframes SlideInLeft {
+  0% {
+    opacity: 0.75;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 80px;
+  padding-block: 20px;
+}
+
+.intro__text h1 {
+  font-size: 2.75rem;
+  font-size: clamp(1.75rem, 1.35rem + 1vw, 3.75rem);
+  margin-bottom: 20px;
+  font-weight: var(--fw-heavy);
+}
+
+.intro__text p {
+  margin-bottom: 32px;
+}
+
+.intro__text button {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: 700;
+  color: var(--black);
+  transition: all 0.5s ease;
+}
+
+.intro__text button:hover {
+  color: var(--dark-gray);
+}
+
+.intro__text button img {
+  width: 50px;
+  margin-left: 10px;
+}
+
+.dark-seats,  .light-seats {
+  grid-column: span 2;
+}
+
+.dark-seats img, .light-seats img {
+  width: 100%;
+  height: auto;
+}
+
+.about {
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 40px;
+}
+
+.about__text h2 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 1100px) {
+  .homepage {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .nav {
+    gap: 120px;
+  }
+
+  .nav__toggle {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-image: url('images/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .nav__items {
+    display: none;
+  }
+
+  .slider-control {
+    transform: translateX(0);
+  }
+
+  .intro {
+    padding-block: 80px;
+    padding-inline: 40px;
+  }
+
+  .about {
+    padding-block: 80px;
+  }
+}
